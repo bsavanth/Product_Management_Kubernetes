@@ -43,9 +43,9 @@ public class ProductController {
     }
 
     @PostMapping("/updateProduct")
-    public ResponseEntity<Object> updateProduct(@RequestBody Product existingproduct)
+    public ResponseEntity<Object> updateProduct(@RequestBody Product product)
     {
-        ps.updateProduct(existingproduct);
+        ps.updateProduct(product);
 
         return new ResponseEntity<>(("Product details updated"), HttpStatus.OK);
     }
