@@ -21,18 +21,19 @@ public class ProductCategoryService {
         return productCategories;
     }
 
-    public void createProduct(ProductCategory productCategory)
+    public void createProductCategory(ProductCategory productCategory)
     {
         pcr.save(productCategory);
     }
 
-    public void updateProduct(ProductCategory productCategory)
+    public void updateProductCategory(ProductCategory productCategory)
     {
         pcr.save(productCategory);
     }
 
-    public void deleteProduct(ProductCategory productCategory)
+    public void deleteProductCategory(Long id)
     {
-        pcr.delete(productCategory);
+        pcr.deleteById(id);
     }
+
 }

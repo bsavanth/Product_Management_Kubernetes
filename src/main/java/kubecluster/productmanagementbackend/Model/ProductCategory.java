@@ -2,7 +2,10 @@ package kubecluster.productmanagementbackend.Model;
 
 import jakarta.persistence.*;
 import lombok.*;
-@Table
+
+import java.util.Set;
+
+@Table(name = "PRODUCT_CATEGORY")
 @Entity
 @Data
 @AllArgsConstructor
@@ -16,4 +19,7 @@ public class ProductCategory {
     private long categoryId;
 
     private String categoryName;
+
+
+
 }

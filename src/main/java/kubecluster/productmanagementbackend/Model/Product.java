@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.util.Date;
 
-@Table
+@Table(name = "PRODUCT")
 @Entity
 @Data
 @AllArgsConstructor
@@ -20,6 +20,10 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long productID;
+
+    @ManyToOne @JoinColumn (name = "category_id", nullable = false)
+    private ProductCategory category;
+
 
     private String productName;
     private Date expiryDate;
