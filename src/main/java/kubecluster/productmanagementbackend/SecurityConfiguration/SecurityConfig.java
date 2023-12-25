@@ -21,10 +21,13 @@ public class SecurityConfig  {
     private static final String[] AUTH_WHITELIST = {
             // -- Swagger UI v2
             "/v2/api-docs",
+            "/h2-console",
             "/swagger-resources",
             "/swagger-resources/**",
             "/configuration/ui",
             "/product/createProduct",
+            "/swagger-ui/index.html#/product-controller/createProduct",
+            "/product-category/createProductCategory",
             "/configuration/security",
             "/swagger-ui.html",
             "/webjars/**",
