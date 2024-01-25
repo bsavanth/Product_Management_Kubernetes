@@ -38,6 +38,7 @@ public class SecurityConfig  {
     };
 
 
+
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder)
     {
@@ -49,20 +50,21 @@ public class SecurityConfig  {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-           http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth ->  auth.requestMatchers("/product/createProduct").permitAll()
-
-                                                .requestMatchers(AUTH_WHITELIST).permitAll()
-                                                .requestMatchers("product/getProducts")
-                                                .authenticated()
-                                      ).formLogin((formLogin) ->
-                           formLogin
-                                   .usernameParameter("admin")
-                                   .passwordParameter("admin"));
 
 
+                http.csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(auth -> auth.requestMatchers("/product/createProduct").permitAll()
 
-                return http.build();
+                        .requestMatchers(AUTH_WHITELIST).permitAll()
+                        .requestMatchers("product/getProducts")
+                        .authenticated()
+                ).formLogin((formLogin) ->
+                        formLogin
+                                .usernameParameter("admin")
+                                .passwordParameter("admin"));
+
+
+        return http.build();
 
     }
 
